@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saudação</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div>
+        <span id="horas"></span>
+        <span id="minutos"></span>
+        <span id="segundos"></span><br>
+        <span id="mensagem" style="font-size: 50px ;"></span>
+    </div>
+
+    <script>
+
+        function relogio() {
+            var currentTime = new Date();
+            var horas = currentTime.getHours();
+            var minutos = currentTime.getMinutes();
+            var segundos = currentTime.getSeconds();
+
+            if (horas < 10) {
+                horas = "0" + horas;
+            }
+            if (minutos < 10) {
+                minutos = "0" + minutos;
+            }
+            if (segundos < 10) {
+                segundos = "0" + segundos;
+            }
+
+            document.getElementById('horas').innerHTML = horas + ":";
+            document.getElementById('minutos').innerHTML = minutos + ":";
+            document.getElementById('segundos').innerHTML = segundos;
+
+        }
+
+        setInterval(relogio, 500)
+
+        var nome = prompt('Digite seu nome:','')
+        var agora = new Date
+        var mensagem = document.getElementById('mensagem')
+
+        if (agora.getHours() >= 0 && agora.getHours() < 12) {
+
+            window.alert(`Bom dia!`)
+            mensagem.innerHTML = `Bem vindo ${nome}, estamos no período matutino!`
+        }
+        else if (agora.getHours() >= 12 && agora.getHours() < 18) {
+
+            window.alert(`Boa tarde!`)
+            mensagem.innerHTML = `Bem vindo ${nome}, estamos no período vespertino!`
+        }
+        else {
+
+            window.alert(`Boa noite!`),
+                mensagem.innerHTML = `Bem vindo ${nome}, estamos no período noturno!`
+        }
+
+
+
+    </script>
+</body>
+
+</html>
